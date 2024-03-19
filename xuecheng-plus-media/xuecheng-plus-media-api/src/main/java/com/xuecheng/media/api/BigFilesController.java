@@ -74,6 +74,7 @@ public class BigFilesController {
         uploadFileParamsDto.setFilename(fileName);
         uploadFileParamsDto.setTags("视频文件");
         uploadFileParamsDto.setFileType("001002");
+        // 融合块，并设置 uploadFileParamsDto 的文件大小 fileSize
         RestResponse restResponse = mediaFileService.mergechunks(1232141425L, fileMd5, chunkTotal, uploadFileParamsDto);
         return restResponse;
 
