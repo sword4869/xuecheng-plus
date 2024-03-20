@@ -37,6 +37,12 @@ public class VideoTask {
 
     /**
      * 视频处理任务
+     * 1. 获取分片参数
+     * 2. 查询待处理的任务
+     * 3. 创建线程池
+     * 4. 遍历任务，将任务分配到线程上。
+     * 5. 使用计数器，所有线程任务完成方法或超时才返回。
+     * 5. 抢占任务、下载minio视频到本地、使用工具类转化视频、上传转化后的视频到minio。
      */
     @XxlJob("videoJobHandler")
     public void videoJobHandler() throws Exception {

@@ -73,7 +73,7 @@ public class MediaFileProcessServiceImpl implements MediaFileProcessService {
         mediaFiles.setUrl(url);
         mediaFilesMapper.updateById(mediaFiles);
 
-        //更新MediaProcess表的状态
+        //更新MediaProcess表的状态【这里可以不用更新吗？】
         mediaProcess.setStatus("2");
         mediaProcess.setFinishDate(LocalDateTime.now());
         mediaProcess.setUrl(url);

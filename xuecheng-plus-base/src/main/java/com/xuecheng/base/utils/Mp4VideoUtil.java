@@ -3,6 +3,7 @@ package com.xuecheng.base.utils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Mp4VideoUtil extends VideoUtil {
@@ -88,6 +89,15 @@ public class Mp4VideoUtil extends VideoUtil {
 //        //将标准输入流和错误输入流合并，通过标准输入流程读取信息
 //        builder.redirectErrorStream(true);
 //        Process p = builder.start();
+
+        // 创建ProcessBuilder
+        ProcessBuilder builder = new ProcessBuilder();
+        List<String> cmds = Arrays.asList("D:\\EditPlus.exe", "-e", "720");
+        builder.command(cmds);  // 命令参数
+        builder.redirectErrorStream(true);  //将标准输入流和错误输入流合并，通过标准输入流程读取信息
+        // 启动Process
+        Process process = builder.start();
+
 
         //ffmpeg的路径
         String ffmpeg_path = "D:\\soft\\ffmpeg\\ffmpeg.exe";//ffmpeg的安装位置
